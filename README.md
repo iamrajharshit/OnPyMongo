@@ -153,7 +153,109 @@ print(x.inserted_ids)
 ```
 The `insert_many()` method returns InsertManyResult object, which has a property, `insert_ids` that holds the ids of the inserted documents.
 
+### Insert Multiple Docs with Specified IDs
+We can assign unique ids by ourselves by specifying the `_id` field while inserting the document(s).<br>
+The values has to be unique. Two documents cannot have same `_id`.
 
+```
+import pymongo
+
+myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+mydb = myclient["mydatabase"]
+mycol = mydb["customers"]
+
+mylist=[
+    {"_id":1,"name":"John","address":"Highway 37"},
+    {"_id":2,"name":"Rohan","address":"Highway 47"},
+    {"_id":3,"name":"Mohan","address":"Highway 45"}
+]
+
+x = mycol.inset_many(mylist)
+
+#print list of the _id values of the inserted documents
+print(x.inserted_ids)
+
+```
+## Python MongoDB Find
+MongoDB we use the find() and find_one() methods to find data in a collection. Just like the SELECT statement is used to find in a table in a MySQL database.<br>
+### Find One
+To select data from a collection in MongoDB, we can use the `find_one()` method.<br>
+The `find_one()` method returns the first occurance in the selection.
+
+```
+import pymongo
+
+myclient = pymongo.MongoClient("mongodb://localhoat:27017/")
+mydb = myclient["mydatabase"]
+mycol = mydb["customers"]
+
+x =  mycol.find_one()
+
+print(x)
+```
+
+### Find All
+To select data from a table in MongoDB, we can also use the `find()` method as it returns all the occurrences in the selection.
+
+```
+import pymongo
+
+myclient = pymongo.MongoClient("mongodb://localhost:27017")
+mydb = myclient["mydatabase"]
+mycol = mydb["customers"]
+
+for x in mycol.find():
+    print(x)
+```
+The first parameter of the find() method is a query object. Here we have not passed any parameter therefore, here it will show the same result as SELECT * in MySQL.
+
+### Return Only Some Fields
+The second parameter of the `find()` method is an object describing which fields to include in the result. <br>
+This param is optional, and if kept empty, all fields will be included in the result.
+
+```
+
+import pymongo
+
+myclient = pymongo.MongoClient("mongodb://localhost:27017")
+mydb = myclient["mydatabase"]
+mycol = mydb["customers"]
+
+for x in mycol.find({},{"_id":0,"name":1,"address":1}):
+    print(x)
+
+```
+
+Its not allowed to specify both 0 and 1 values in the same object (except if one of the fields in the _id field). If we specify a field with the value 0, all other fields get the value 1 and vice versa.
+
+```
+import pymongo
+
+myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+mydb = myclient["mydatabase"]
+mycol = mydb["customers"]
+
+for x in mycol.find({},{"address":0}):
+    print(x)
+```
+
+##### Error
+If we specify both 0 and 1 values in the same object (exept if one of the fields is the _id field):
+
+```
+import pymongo
+
+myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+mydb = myclient["mydatabase"]
+mycol = mydb["customers"]
+
+for x in mycol.find({},{"name":1,"address":0}):
+    print(x)
+
+```
+
+## Python MongoDB Query
+### Filter the Result
 
 
 

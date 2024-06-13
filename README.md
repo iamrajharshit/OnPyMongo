@@ -1,6 +1,21 @@
 # MongoDB using Python
 MOngoDB is a NoSQL databases that stores data in flexible, JSON-like documents.
 
+## Contents
+|SLno:|Topic|Description|
+|--|--|--|
+||[Introduction to PyMongo](#pymongo)||
+||[Creating a Database](#python-mongodb-create-database)||
+||[Creating a Collection](#python-mongodb-create-collection)||
+||[Insert Document](#python-mongodb-insert-documant)||
+||[Find Document](#python-mongodb-find)||
+||[Query Document](#python-mongodb-query)||
+||[]()||
+||[]()||
+||[]()||
+||[]()||
+
+
 ## PyMongo
 Python can be used in database applications.
 - Python needs a MongoDB driver to access the MongoDB database.
@@ -18,7 +33,7 @@ To test the installation, import pymongo and run the .py file.
 import pymongo
 ```
 
-## Creating a Database
+## Python MongoDB Create Database
 
 To create a database in MongoDB, we start by creating a `MongoCLient` object, then we specify a connection URL with the correct IP address and the name of the database we want to create.
 <br>
@@ -35,7 +50,7 @@ In MongoDB, a database is not created until it gets content!
 
 MongoDB waits until you have created a collection (Table), with at least one document (record) before it actually creates the database (and collection).
 
-## Check if Database Exists
+### Check if Database Exists
 
 Once the database is created, we check its existance. It can be done by listing all databases.
 

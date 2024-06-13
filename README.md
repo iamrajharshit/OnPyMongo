@@ -35,13 +35,13 @@ import pymongo
 
 ## Python MongoDB Create Database
 
-To create a database in MongoDB, we start by creating a `MongoCLient` object, then we specify a connection URL with the correct IP address and the name of the database we want to create.
+To create a database in MongoDB, we start by creating a `MongoCLient` object, then we specify a connection `URL` with the correct IP address and the name of the database we want to create.
 <br>
 
 ```
 import pymongo
 
-myclient= pymongo.MongoClient("mongodb://localhost:27017?")
+myclient= pymongo.MongoClient("mongodb://localhost:27017/")
 
 mydb=myclient["mydatabase"]
 ```
@@ -255,7 +255,7 @@ for x in mycol.find({},{"address":0}):
 ```
 
 ##### Error
-If we specify both 0 and 1 values in the same object (exept if one of the fields is the _id field):
+**If we specify both 0 and 1 values in the same object (exept if one of the fields is the _id field):**
 
 ```
 import pymongo
@@ -271,8 +271,109 @@ for x in mycol.find({},{"name":1,"address":0}):
 
 ## Python MongoDB Query
 ### Filter the Result
+When finding documents in a collection, you can filter the rsult by using a query object.<br>
+The first argument of the `find()` method is a query object, and is used to limit the search.
+
+```
+import pymongo
+
+myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+mydb = myclient["mydatabse"]
+mycol = mydb["customers"]
+
+myquery = {"address": "Park Lane 38"}
+
+mydoc = mycol.find(myquery)
+
+for x in mydoc:
+    print(X)
+```
+
+### Advance Query
+To make advance queries we can use modifiers as values in the query object.
+
+**Example: to find the doc where the "address" field stats with the letter "S" or higher (alpha), use the greater than modifier: {"$gt":"S"}**
+```
+import pymongo
+
+myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+
+mydb = myclient["mydatabse"]
+
+mycol = mycol["customers"]
+
+myquery = {"address":{"$gt":"S"}}
+
+mydoc = mycol.find(myquery)
+
+for x in mydoc:
+    print(X)
+
+```
+
+### Filter with Regular Expressions
+Using regular expression as a modifier.<br>
+Regular Expression can only be used with string datatype.
+
+**To find only the documents where the "address" field starts with the letter "S", use the regular expression {"$regex": "^S"}:**
+
+```
+import pymongo
+
+myclient = pymongo.MongoClient("mongodb://localhost:27017")
+
+mydb = myclient["mydatabase"]
+mycol = mydb["customers"]
+
+myquery = {"address":{"$regex":"^S"}}
+
+mydoc = mycol.find(myquery)
+
+for x in mydoc:
+    print(x)
+
+```
+
+## Python MongoDB Sort
+### Sort the Result
 
 
+### Sort Descending
+
+
+
+
+## Python MongoDB Delete Document
+
+### Delete Document
+
+
+### Delete Many Documents
+
+
+### Delete all Documents in a Collection
+
+
+
+## Python MongoDB Drop Collection
+
+### Delete Collection
+
+
+
+
+## Python MongoDB Update
+
+### Update Collection
+
+### Update Many
+
+
+
+
+## Python MongoDB Limit
+
+### Limit the Result
 
 
 

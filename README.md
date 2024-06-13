@@ -4,12 +4,12 @@ MOngoDB is a NoSQL databases that stores data in flexible, JSON-like documents.
 ## Contents
 |SLno:|Topic|Description|
 |--|--|--|
-||[Introduction to PyMongo](#pymongo)||
-||[Creating a Database](#python-mongodb-create-database)||
-||[Creating a Collection](#python-mongodb-create-collection)||
-||[Insert Document](#python-mongodb-insert-documant)||
-||[Find Document](#python-mongodb-find)||
-||[Query Document](#python-mongodb-query)||
+|1|[Introduction to PyMongo](#pymongo)||
+|2|[Creating a Database](#python-mongodb-create-database)||
+|3|[Creating a Collection](#python-mongodb-create-collection)||
+|4|[Insert Document](#python-mongodb-insert-documant)||
+|5|[Find Document](#python-mongodb-find)||
+|6|[Query Document](#python-mongodb-query)||
 ||[]()||
 ||[]()||
 ||[]()||

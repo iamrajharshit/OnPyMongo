@@ -337,42 +337,29 @@ for x in mydoc:
 ## Python MongoDB Sort
 ### Sort the Result
 
-
 ### Sort Descending
 
 
-
-
 ## Python MongoDB Delete Document
-
 ### Delete Document
 
-
 ### Delete Many Documents
-
 
 ### Delete all Documents in a Collection
 
 
 
 ## Python MongoDB Drop Collection
-
 ### Delete Collection
 
 
-
-
 ## Python MongoDB Update
-
 ### Update Collection
 
 ### Update Many
 
 
-
-
 ## Python MongoDB Limit
-
 ### Limit the Result
 
 

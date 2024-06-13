@@ -5,16 +5,16 @@ MOngoDB is a NoSQL databases that stores data in flexible, JSON-like documents.
 |SLno:|Topic|Description|
 |--|--|--|
 |0|[Introduction to PyMongo](#pymongo)||
-|1|[Database](#python-mongodb-create-database)||
-|2|[Collection](#python-mongodb-create-collection)||
-|3|[Insert](#python-mongodb-insert-documant)||
-|4|[Find](#python-mongodb-find)||
-|5|[Query](#python-mongodb-query)||
-|6|[Sort]()||
-|7|[Delete]()||
-|8|[Drop Collection]()||
-|9|[Update]()||
-|10|[Limit]()||
+|1|[Database in MongoDB](#python-mongodb-create-database)||
+|2|[Collection in MongoDB](#python-mongodb-create-collection)||
+|3|[Insert in MongoDB](#python-mongodb-insert-documant)||
+|4|[Find in MongoDB](#python-mongodb-find)||
+|5|[Query in MongoDB](#python-mongodb-query)||
+|6|[Sort in MongoDB]()||
+|7|[Delete in MongoDB]()||
+|8|[Drop Collection in MongoDB]()||
+|9|[Update in MongoDB]()||
+|10|[Limit in MongoDB]()||
 
 ## PyMongo
 Python can be used in database applications.

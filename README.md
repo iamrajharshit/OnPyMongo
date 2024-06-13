@@ -336,6 +336,11 @@ for x in mydoc:
 
 ## Python MongoDB Sort
 ### Sort the Result
+Use  the `sort()` method to sort the result in ascending or descending order. <br>
+The `sort()` method takes one parameter for "fieldname" and one param for "direction" (ascending is default direction).
+
+
+
 
 ### Sort Descending
 
